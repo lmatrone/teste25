@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+    <html lang="pt">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Consulta e Registro de Atos Societários</title>
+
+    </head>
+
+    <body>
+        <div class="container-fluid bg-2 text-center">
+    
+            <h1> <font face="Calibri" color=darkgrey>Livro de Registro de Atos Societários em Blockchain</font> </h1>
+            <h2> <font face="Calibri" color=darkblue><b>ABC Participações S.A.</b></font></h2>
+        </div>
+            <div style='text-align:center'>
+           <a rel='nofollow' href='https://br.qr-code-generator.com/
+            ' border='0' style='cursor:default'></a><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Frinkeby.etherscan.io%2Faddress%2F0x6ce2d9efbc23dda8f5e4f09fbc31e3af5e3c0cd4&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
+        <h2><SUP><font face="Calibri"><font size="3"><b>Contract hash:</b> 0x6ce2d9efbc23dda8f5e4f09fbc31e3af5e3c0cd4</font></SUP></h2>    
+        </div style> 
+            <h2><font face="Calibri"><div style=margin-left:10px>Registrar Atas</font></h2>
+            <div id="registro">
+                <form action="#" method="POST" name="formRegistro" id="formRegistro">
+                    <div>
+                        <label for="data"><font face="Calibri"><div style=margin-left:10px>Data da Reunião: </font></label>
+                        <input type="date" name="data" id="data" />
+                    </div>
+                                        <div>
+                        <label for="data"><font face="Calibri"><div style=margin-left:10px>Participantes: </font></label>
+                        <input type="text" name="participantes" id="participantes" size="160" />
+                    </div>
+                    <div>
+                        <label for="pauta"><font face="Calibri"><div style=margin-left:10px>Pauta da reunião: </font></label>
+                        <input type="text" name="pauta" id="pauta" size="160" />
+                    </div>
+                    <div>
+                        <label for="decisao"><font face="Calibri"><div style=margin-left:10px>Deliberações: </font></label>
+                        <input type="text" name="decisao" id="decisao" size="160" />
+                    </div>
+                    <div>
+                        <label for="capitalsocial"><font face="Calibri"><div style=margin-left:10px>Capital Social: </font></label>
+                        <input type="capitalsocial" name="capitalsocial" id="capitalsocial" />
+                    </div>
+                    <div>
+                        <label for="observacoes"><font face="Calibri"><div style=margin-left:10px>Capital Social: </font></label>
+                        <input type="observacoes" name="observacoes" id="observacoes" />
+                    </div>
+                    <div>
+                        <label for="numeroAta"><font face="Calibri"><div style=margin-left:10px>Capital Social: </font></label>
+                        <input type="numeroAta" name="numeroAta" id="numeroAta" />
+                    </div>
+                    <div>
+                    <br>
+                    <div style=margin-left:10px><button onclick="ArquivarAta()" class="btn btn-danger"><span class="glyphicon glyphicon-th"><font face="Calibri">  GRAVAR</span></font></button>
+                    </div>
+                </form>
+                <br>
+                <div>
+                    <div id="statusTransacao">&nbsp;</div>
+            <h2><font face="Calibri"><div style=margin-left:10px>Busca por número de Ata</font></h2>
+            <div id="decisao">
+                <form action="#" method="get" name="formPesquisa" id="formPesquisa">
+                    <div>
+                        <label for="numeroAta"><font face="Calibri"><div style=margin-left:10px>Informe o número de Ata: </font></label>
+                        <input type="number" name="numeroAta" id="numeroAta" />
+                    </div>
+                    <br>
+                    <div>
+                    <div style=margin-left:10px><button onclick="consultarDecisoes()" class="btn btn-primary"><span class="glyphicon glyphicon-search"><font face="Calibri">  CONSULTAR</font></span></button>
+                    </div>
+                <br>
+                </form>
+                <div id=  "resultadoPesquisa"></div>
+
+                <h2><font face="Calibri"><div style=margin-left:10px>Busca por Data</font></h2>
+                <div id="data">
+                    <form action="#" method="get" name="formPesquisa1" id="formPesquisa1">
+                        <div>
+                            <label for="_data"><font face="Calibri"><div style=margin-left:10px>Informe a Data da Reunião: </font></label>
+                            <input type="date" name="_data" id="_data" />
+                        </div>
+                        <div>
+                        <br>
+                        <div style=margin-left:10px><button onclick="buscaPorData()" class="btn btn-primary"><span class="glyphicon glyphicon-search"><font face="Calibri">  CONSULTAR</font></span></button>
+                        </div>
+                        </form>
+                        <br>
+                    <div id="resultadoPesquisa1"></div>
+                    <br>
+                     <h2><font face="Calibri"><div style=margin-left:10px>Total de Registros Realizados</font></h2>
+                <div id="data">
+                    <form action="#" method="get" name="formPesquisa2" id="formPesquisa2">
+                        <div>
+                        
+                        <div style=margin-left:10px><button onclick="mostrarNumeroAtas()" class="btn btn-primary"><span class="glyphicon glyphicon-search"><font face="Calibri">  CONSULTAR</font></span></button>
+                        </div>
+                    </form>
+                    <br>
+                    <div id="resultadoPesquisa2"></div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="connectToSmartContract.js"></script>
+        <script src="abi.js"></script>
+        <script>
+            var frmPesquisa = document.formPesquisa;
+            function consultarDecisoes() {
+                event.preventDefault();
+                $("#resultadoPesquisa").html("");
+                contract.ConsultaDeliberacoesConselho(frmPesquisa.numeroAta.value, function (erro, resultado) {
+                    if (erro) {
+                        console.log("consultarDecisoes");
+                        console.error(erro);
+                        alert("Ata inexistente ou não registrada");
+                        frmPesquisa.numeroAta.value = "";
+                        return
+                    }
+                    $("#resultadoPesquisa").html("Resumo das deliberações: " + resultado);
+                })
+            }
+
+            var frmPesquisa1 = document.formPesquisa1;
+            function buscaPorData() {
+                event.preventDefault();
+                $("#resultadoPesquisa1").html("");
+                contract.buscaPorData(frmPesquisa1._data.value, function (erro, resultado) {
+                    if (erro) {
+                        console.log("consultarDecisoes");
+                        console.error(erro);
+                        alert("Ata inexistente ou não registrada");
+                        formPesquisa1._data.value = "";
+                        return
+                    }
+                    console.log(resultado);
+                    $("#resultadoPesquisa1").html(" Data: " + resultado[2]+"." + " Participantes: " + resultado[3]+"." + " Pauta: " + resultado[0]+"." + " Deliberações: " + resultado[1]+"." . + " Ato registrado sob número: " + resultado[6]+"." + " Capital social(status): " + resultado[4]+"." + + " Observações: " + resultado[5]+".");
+                })
+            }
+            
+            var frmPesquisa2 = document.formPesquisa2;
+            function mostrarNumeroAtas() {
+                event.preventDefault();
+                $("#resultadoPesquisa2").html("");
+                contract.mostrarNumeroAtas(frmPesquisa2.value, function (erro, resultado) {
+                    if (erro) {
+                        console.log("mostrarNumeroAtas");
+                        console.error(erro);
+                        alert("erro na consulta");
+                        frmPesquisa2.numeroAta.value = "";
+                        return
+                    }
+                    $("#resultadoPesquisa2").html("Atos arquivados até o momento: " + resultado);
+                })
+            }
+            
+            var frmRegistro = document.formRegistro;
+            function ArquivarAta() {
+                event.preventDefault();
+                $("#statusTransacao").html("&nbsp;");
+                contract.ArquivarAta(frmRegistro.pauta.value, frmRegistro.decisao.value, frmRegistro.data.value, frmRegistro.participantes.value, frmRegistro.capitalsocial.value, frmRegistro.observacoes.value, frmRegistro.numeroAta.value,  {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
+                    if (erro) {
+                        console.log("ArquivarAta");
+                        console.error(erro);
+                        alert("Ocorreu um erro - documento não registrado");
+                        return
+                    }
+                    waitForTxToBeMined(resultado, "#statusTransacao");
+                })
+            }
+        </script>
+    </body>
+</html>
+                   
