@@ -118,7 +118,8 @@
                         frmPesquisa.numeroAta.value = "";
                         return
                     }
-                    $("#resultadoPesquisa").html("Resumo das deliberações: " + resultado);
+                    console.log(resultado);
+                    $("#resultadoPesquisa1").html(" Data: " + resultado[2]+"." + " Participantes: " + resultado[3]+"." + " Pauta: " + resultado[0]+"." + " Deliberações: " + resultado[1]+"." + " Ato registrado sob número: " + resultado[6]+"." + " Capital social(status): " + resultado[4]+"." + " Observações: " + resultado[5]+".");
                 })
             }
 
