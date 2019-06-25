@@ -24,8 +24,8 @@ contract DeliberacoesConselhoAdm {
     }
     
     function ConsultaDeliberacoesConselho(uint numeroAta) public view returns (string memory) {
-        return book1[numeroAta].decisao;
-
+        AtadeReuniao memory atadeReuniao = book1[numeroAta];
+        return (atadeReuniao.pauta, atadeReuniao.decisao, atadeReuniao.data, atadeReuniao.participantes, atadeReuniao.capitalSocial, atadeReuniao.observacoes, atadeReuniao.numeroAta);
     }
      
     function buscaPorData(string memory _data) public view returns 
