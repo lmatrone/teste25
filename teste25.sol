@@ -29,13 +29,13 @@ contract DeliberacoesConselhoAdm {
     }
      
     function buscaPorData(string memory _data) public view returns 
-    (string memory, string memory, string memory, string memory, string memory, string memory) {
+    (string memory, string memory, string memory, string memory, string memory, string memory, string memory) {
         uint indice = 0;
         bytes32 hashDataASerBuscada = keccak256(bytes(_data));
         for (indice = 0; indice<book1.length; indice++) {
             AtadeReuniao memory atadeReuniao = book1[indice];
             if (hashDataASerBuscada == keccak256(bytes(atadeReuniao.data))) {
-                return (atadeReuniao.pauta, atadeReuniao.decisao, atadeReuniao.data, atadeReuniao.participantes, atadeReuniao.capitalSocial, atadeReuniao.observacoes);
+                return (atadeReuniao.pauta, atadeReuniao.decisao, atadeReuniao.data, atadeReuniao.participantes, atadeReuniao.capitalSocial, atadeReuniao.observacoes, atadeReuniao.numeroAta);
             }
         }
     }
