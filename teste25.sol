@@ -23,7 +23,7 @@ contract DeliberacoesConselhoAdm {
         
     }
     
-    function ConsultaDeliberacoesConselho(uint numeroAta) public view returns (string memory) {
+    function ConsultaDeliberacoesConselho(uint numeroAta) public view returns (string memory, string memory, string memory, string memory, string memory, string memory, string memory) {
         AtadeReuniao memory atadeReuniao = book1[numeroAta];
         return (atadeReuniao.pauta, atadeReuniao.decisao, atadeReuniao.data, atadeReuniao.participantes, atadeReuniao.capitalSocial, atadeReuniao.observacoes, atadeReuniao.numeroAta);
     }
