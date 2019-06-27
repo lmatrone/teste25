@@ -28,6 +28,10 @@
                         <label for="data"><font face="Calibri"><div style=margin-left:10px>Data da Reunião: </font></label>
                         <input type="date" name="data" id="data" />
                     </div>
+                                            <div>
+                        <label for="observacoes"><font face="Calibri"><div style=margin-left:10px>Tipo: </font></label>
+                        <input type="observacoes" name="observacoes" id="observacoes" size="160" />
+                    </div>
                                         <div>
                         <label for="data"><font face="Calibri"><div style=margin-left:10px>Mesa / Participantes: </font></label>
                         <input type="text" name="participantes" id="participantes" size="160" />
@@ -43,10 +47,6 @@
                     <div>
                         <label for="capitalsocial"><font face="Calibri"><div style=margin-left:10px>Capital Social (valor / tipo / status): </font></label>
                         <input type="capitalsocial" name="capitalsocial" id="capitalsocial" size="160" />
-                    </div>
-                    <div>
-                        <label for="observacoes"><font face="Calibri"><div style=margin-left:10px>Observações: </font></label>
-                        <input type="observacoes" name="observacoes" id="observacoes" size="160" />
                     </div>
                     <div>
                         <label for="numeroAta"><font face="Calibri"><div style=margin-left:10px>Número atribuído a esta Ata: </font></label>
@@ -118,7 +118,7 @@
                         return
                     }
                     console.log(resultado);
-                    $("#resultadoPesquisa").html(" Data: " + resultado[2]+"." + " Participantes: " + resultado[3]+"." + " Pauta: " + resultado[0]+"." + " Deliberações: " + resultado[1]+"." + " Ato registrado sob número: " + resultado[6]+"." + " Capital Social(status): " + resultado[4]+"." + " Observações: " + resultado[5]+".");
+                    $("#resultadoPesquisa").html(" Data: " + resultado[2]+"." + " Tipo: " + resultado[5]+"." + " Participantes: " + resultado[3]+"." + " Pauta: " + resultado[0]+"." + " Deliberações: " + resultado[1]+"." + " Ato registrado sob número: " + resultado[6]+"." + " Capital Social(status): " + resultado[4]+".");
                 })
             }
 
@@ -135,7 +135,7 @@
                         return
                     }
                     console.log(resultado);
-                    $("#resultadoPesquisa1").html(" Data: " + resultado[2]+"." + " Participantes: " + resultado[3]+"." + " Pauta: " + resultado[0]+"." + " Deliberações: " + resultado[1]+"." + " Ato registrado sob número: " + resultado[6]+"." + " Capital Social(status): " + resultado[4]+"." + " Observações: " + resultado[5]+".");
+                    $("#resultadoPesquisa1").html(" Data: " + resultado[2]+"." + " Tipo: " + resultado[5]+"." + " Participantes: " + resultado[3]+"." + " Pauta: " + resultado[0]+"." + " Deliberações: " + resultado[1]+"." + " Ato registrado sob número: " + resultado[6]+"." + " Capital Social(status): " + resultado[4]+".");
                 })
             }
             
